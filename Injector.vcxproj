@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{A0EDD2AC-09C4-46E4-88D7-9B369952317C}</ProjectGuid>
+    <RootNamespace>faceinjectorv2</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Inject</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <SpectreMitigation>false</SpectreMitigation>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);./libs/cryptopp/include;./libs/curl/include;./libs/openssl/include;./libs/json/include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\ayyo loader\ayyoloader\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);./libs/curl/lib/;./libs/cryptopp/lib/;./libs/openssl/lib;./libs/;$(LibraryPath)</LibraryPath>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>./libs/cryptopp/lib/cryptopp-static.lib;./libs/curl/lib/libcurl.lib;./libs/openssl/lib/libcrypto.lib;./libs/openssl/lib/libssl.lib;./libs/zlib.lib;Normaliz.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);./libs/cryptopp/lib/cryptopp-static.lib;./libs/curl/lib/libcurl.lib;./libs/openssl/lib/libcrypto.lib;./libs/openssl/lib/libssl.lib;./libs/zlib.lib;Normaliz.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;advapi32.lib</AdditionalDependencies>
+      <GenerateMapFile>false</GenerateMapFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\ssssssgang\ssssssgang\stdafx.h" />
+    <ClInclude Include="api\api.h" />
+    <ClInclude Include="api\Auth.h" />
+    <ClInclude Include="api\drvutils.h" />
+    <ClInclude Include="api\resource.h" />
+    <ClInclude Include="api\shellcode.h" />
+    <ClInclude Include="api\utilit.h" />
+    <ClInclude Include="api\xor.h" />
+    <ClInclude Include="betterheader.h" />
+    <ClInclude Include="color.hpp" />
+    <ClInclude Include="define\stdafx.h" />
+    <ClInclude Include="driver\defines.h" />
+    <ClInclude Include="driver\driver.h" />
+    <ClInclude Include="ida.h" />
+    <ClInclude Include="ImGui\imconfig.h" />
+    <ClInclude Include="ImGui\imgui.h" />
+    <ClInclude Include="ImGui\imgui_impl_dx9.h" />
+    <ClInclude Include="ImGui\imgui_impl_win32.h" />
+    <ClInclude Include="ImGui\imgui_internal.h" />
+    <ClInclude Include="ImGui\imstb_rectpack.h" />
+    <ClInclude Include="ImGui\imstb_textedit.h" />
+    <ClInclude Include="ImGui\imstb_truetype.h" />
+    <ClInclude Include="skStr.h" />
+    <ClInclude Include="inject\injector.h" />
+    <ClInclude Include="inject\utils.h" />
+    <ClInclude Include="instr.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\3way.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\adler32.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\adv_simd.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\aes.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\aes_armv4.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\algebra.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\algparam.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\arc4.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\argnames.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\aria.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\arm_simd.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\asn.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\authenc.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\base32.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\base64.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\basecode.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\blake2.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\blowfish.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\blumshub.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\camellia.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\cast.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\cbcmac.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\ccm.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\chacha.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\chachapoly.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\cham.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\channels.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\cmac.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\config.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\cpu.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\crc.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\cryptlib.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\darn.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\default.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\des.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\dh.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\dh2.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\dll.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\dmac.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\donna.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\donna_32.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\donna_64.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\donna_sse.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\drbg.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\dsa.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\eax.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\ec2n.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\eccrypto.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\ecp.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\ecpoint.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\elgamal.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\emsa2.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\eprecomp.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\esign.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\factory.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\fhmqv.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\files.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\filters.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\fips140.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\fltrimpl.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\gcm.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\gf256.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\gf2n.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\gf2_32.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\gfpcrypt.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\gost.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\gzip.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\hashfwd.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\hc128.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\hc256.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\hex.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\hight.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\hkdf.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\hmac.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\hmqv.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\hrtimer.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\ida.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\idea.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\integer.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\iterhash.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\kalyna.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\keccak.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\lea.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\lubyrack.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\luc.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\mars.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\md2.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\md4.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\md5.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\mdc.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\mersenne.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\misc.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\modarith.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\modes.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\modexppc.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\mqueue.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\mqv.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\naclite.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\nbtheory.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\nr.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\oaep.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\oids.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\osrng.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\ossig.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\padlkrng.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\panama.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\pch.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\pkcspad.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\poly1305.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\polynomi.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\ppc_simd.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\pssr.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\pubkey.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\pwdbased.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\queue.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\rabbit.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\rabin.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\randpool.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\rc2.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\rc5.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\rc6.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\rdrand.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\resource.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\rijndael.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\ripemd.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\rng.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\rsa.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\rw.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\safer.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\salsa.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\scrypt.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\seal.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\secblock.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\seckey.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\seed.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\serpent.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\serpentp.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\sha.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\sha3.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\shacal2.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\shake.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\shark.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\simeck.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\simon.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\simple.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\siphash.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\skipjack.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\sm3.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\sm4.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\smartptr.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\sosemanuk.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\speck.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\square.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\stdcpp.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\strciphr.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\tea.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\threefish.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\tiger.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\trap.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\trunhash.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\ttmac.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\tweetnacl.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\twofish.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\vmac.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\wake.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\whrlpool.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\words.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\xed25519.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\xtr.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\xtrcrypt.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\zdeflate.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\zinflate.h" />
+    <ClInclude Include="libs\cryptopp\include\cryptopp\zlib.h" />
+    <ClInclude Include="libs\curl\include\curl\curl.h" />
+    <ClInclude Include="libs\curl\include\curl\curlver.h" />
+    <ClInclude Include="libs\curl\include\curl\easy.h" />
+    <ClInclude Include="libs\curl\include\curl\mprintf.h" />
+    <ClInclude Include="libs\curl\include\curl\multi.h" />
+    <ClInclude Include="libs\curl\include\curl\stdcheaders.h" />
+    <ClInclude Include="libs\curl\include\curl\system.h" />
+    <ClInclude Include="libs\curl\include\curl\typecheck-gcc.h" />
+    <ClInclude Include="libs\curl\include\curl\urlapi.h" />
+    <ClInclude Include="libs\json\include\nlohmann\adl_serializer.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\byte_container_with_subtype.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\conversions\from_json.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\conversions\to_chars.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\conversions\to_json.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\exceptions.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\hash.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\input\binary_reader.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\input\input_adapters.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\input\json_sax.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\input\lexer.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\input\parser.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\input\position_t.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\iterators\internal_iterator.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\iterators\iteration_proxy.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\iterators\iterator_traits.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\iterators\iter_impl.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\iterators\json_reverse_iterator.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\iterators\primitive_iterator.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\json_pointer.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\json_ref.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\macro_scope.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\macro_unscope.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\meta\cpp_future.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\meta\detected.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\meta\is_sax.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\meta\type_traits.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\meta\void_t.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\output\binary_writer.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\output\output_adapters.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\output\serializer.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\detail\value_t.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\json.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\json_fwd.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\ordered_map.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\thirdparty\hedley\hedley.hpp" />
+    <ClInclude Include="libs\json\include\nlohmann\thirdparty\hedley\hedley_undef.hpp" />
+    <ClInclude Include="libs\json\single_include\nlohmann\json.hpp" />
+    <ClInclude Include="libs\openssl\include\openssl\aes.h" />
+    <ClInclude Include="libs\openssl\include\openssl\asn1.h" />
+    <ClInclude Include="libs\openssl\include\openssl\asn1err.h" />
+    <ClInclude Include="libs\openssl\include\openssl\asn1t.h" />
+    <ClInclude Include="libs\openssl\include\openssl\asn1_mac.h" />
+    <ClInclude Include="libs\openssl\include\openssl\async.h" />
+    <ClInclude Include="libs\openssl\include\openssl\asyncerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\bio.h" />
+    <ClInclude Include="libs\openssl\include\openssl\bioerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\blowfish.h" />
+    <ClInclude Include="libs\openssl\include\openssl\bn.h" />
+    <ClInclude Include="libs\openssl\include\openssl\bnerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\buffer.h" />
+    <ClInclude Include="libs\openssl\include\openssl\buffererr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\camellia.h" />
+    <ClInclude Include="libs\openssl\include\openssl\cast.h" />
+    <ClInclude Include="libs\openssl\include\openssl\cmac.h" />
+    <ClInclude Include="libs\openssl\include\openssl\cms.h" />
+    <ClInclude Include="libs\openssl\include\openssl\cmserr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\comp.h" />
+    <ClInclude Include="libs\openssl\include\openssl\comperr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\conf.h" />
+    <ClInclude Include="libs\openssl\include\openssl\conferr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\conf_api.h" />
+    <ClInclude Include="libs\openssl\include\openssl\crypto.h" />
+    <ClInclude Include="libs\openssl\include\openssl\cryptoerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ct.h" />
+    <ClInclude Include="libs\openssl\include\openssl\cterr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\des.h" />
+    <ClInclude Include="libs\openssl\include\openssl\dh.h" />
+    <ClInclude Include="libs\openssl\include\openssl\dherr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\dsa.h" />
+    <ClInclude Include="libs\openssl\include\openssl\dsaerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\dtls1.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ebcdic.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ec.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ecdh.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ecdsa.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ecerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\engine.h" />
+    <ClInclude Include="libs\openssl\include\openssl\engineerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\err.h" />
+    <ClInclude Include="libs\openssl\include\openssl\evp.h" />
+    <ClInclude Include="libs\openssl\include\openssl\evperr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\e_os2.h" />
+    <ClInclude Include="libs\openssl\include\openssl\hmac.h" />
+    <ClInclude Include="libs\openssl\include\openssl\idea.h" />
+    <ClInclude Include="libs\openssl\include\openssl\kdf.h" />
+    <ClInclude Include="libs\openssl\include\openssl\kdferr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\lhash.h" />
+    <ClInclude Include="libs\openssl\include\openssl\md2.h" />
+    <ClInclude Include="libs\openssl\include\openssl\md4.h" />
+    <ClInclude Include="libs\openssl\include\openssl\md5.h" />
+    <ClInclude Include="libs\openssl\include\openssl\mdc2.h" />
+    <ClInclude Include="libs\openssl\include\openssl\modes.h" />
+    <ClInclude Include="libs\openssl\include\openssl\objects.h" />
+    <ClInclude Include="libs\openssl\include\openssl\objectserr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\obj_mac.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ocsp.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ocsperr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\opensslconf.h" />
+    <ClInclude Include="libs\openssl\include\openssl\opensslv.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ossl_typ.h" />
+    <ClInclude Include="libs\openssl\include\openssl\pem.h" />
+    <ClInclude Include="libs\openssl\include\openssl\pem2.h" />
+    <ClInclude Include="libs\openssl\include\openssl\pemerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\pkcs12.h" />
+    <ClInclude Include="libs\openssl\include\openssl\pkcs12err.h" />
+    <ClInclude Include="libs\openssl\include\openssl\pkcs7.h" />
+    <ClInclude Include="libs\openssl\include\openssl\pkcs7err.h" />
+    <ClInclude Include="libs\openssl\include\openssl\rand.h" />
+    <ClInclude Include="libs\openssl\include\openssl\randerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\rand_drbg.h" />
+    <ClInclude Include="libs\openssl\include\openssl\rc2.h" />
+    <ClInclude Include="libs\openssl\include\openssl\rc4.h" />
+    <ClInclude Include="libs\openssl\include\openssl\rc5.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ripemd.h" />
+    <ClInclude Include="libs\openssl\include\openssl\rsa.h" />
+    <ClInclude Include="libs\openssl\include\openssl\rsaerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\safestack.h" />
+    <ClInclude Include="libs\openssl\include\openssl\seed.h" />
+    <ClInclude Include="libs\openssl\include\openssl\sha.h" />
+    <ClInclude Include="libs\openssl\include\openssl\srp.h" />
+    <ClInclude Include="libs\openssl\include\openssl\srtp.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ssl.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ssl2.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ssl3.h" />
+    <ClInclude Include="libs\openssl\include\openssl\sslerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\stack.h" />
+    <ClInclude Include="libs\openssl\include\openssl\store.h" />
+    <ClInclude Include="libs\openssl\include\openssl\storeerr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\symhacks.h" />
+    <ClInclude Include="libs\openssl\include\openssl\tls1.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ts.h" />
+    <ClInclude Include="libs\openssl\include\openssl\tserr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\txt_db.h" />
+    <ClInclude Include="libs\openssl\include\openssl\ui.h" />
+    <ClInclude Include="libs\openssl\include\openssl\uierr.h" />
+    <ClInclude Include="libs\openssl\include\openssl\whrlpool.h" />
+    <ClInclude Include="libs\openssl\include\openssl\x509.h" />
+    <ClInclude Include="libs\openssl\include\openssl\x509err.h" />
+    <ClInclude Include="libs\openssl\include\openssl\x509v3.h" />
+    <ClInclude Include="libs\openssl\include\openssl\x509v3err.h" />
+    <ClInclude Include="libs\openssl\include\openssl\x509_vfy.h" />
+    <ClInclude Include="libs\openssl\include\openssl\__DECC_INCLUDE_EPILOGUE.H" />
+    <ClInclude Include="libs\openssl\include\openssl\__DECC_INCLUDE_PROLOGUE.H" />
+    <ClInclude Include="obfuscation.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="spoof_call.hpp" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="stringapiob.h" />
+    <ClInclude Include="UAV.h" />
+    <ClInclude Include="winapip.h" />
+    <ClInclude Include="xorstr.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="anti.cpp" />
+    <ClCompile Include="driver\driver.cpp" />
+    <ClCompile Include="DR_Register_Resetter.cpp" />
+    <ClCompile Include="ImGui\imgui.cpp" />
+    <ClCompile Include="ImGui\imgui_demo.cpp" />
+    <ClCompile Include="ImGui\imgui_draw.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp" />
+    <ClCompile Include="ImGui\imgui_tables.cpp" />
+    <ClCompile Include="ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="instr.cpp" />
+    <ClCompile Include="anti.hpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="maingui.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libs\cryptopp\lib\cryptopp-static.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="globby.pro" />
+    <None Include="spoof.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Inject.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
